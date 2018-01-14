@@ -13,8 +13,9 @@ package pers.caijx.leetcode;
  */
 public class StudentAttendanceRecord {
 
+
     public static boolean checkRecord(String s) {
-        return !s.matches(".*LLL.*|.*A.*A.*");
+        return !s.matches(".*LLL.*|.*A.*A.*");  //匹配任何字符：点号(.)
     }
 
     public static void main(String[] args) {
