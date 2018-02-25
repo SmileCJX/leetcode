@@ -20,6 +20,14 @@ import java.util.Objects;
  */
 public class WordPattern {
 
+    /**
+     *map.put()，如果第二次put进同样的key不同value，返回的值是被挤掉的那个value！不然就是null
+
+     意思是如果下一次发现了一对Pattern+word，他们上次出现的位置应该是一样的。就是现在放入的这一对，如果在map中已经存在，那么上次放入的也应该是同一对
+     * @param pattern
+     * @param str
+     * @return
+     */
     public boolean wordPattern(String pattern, String str) {
         String[] words = str.split(" ");
         if (words.length != pattern.length()) {
