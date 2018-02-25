@@ -43,8 +43,41 @@ public class WordPattern {
         return true;
     }
 
+    /**
+     * 如果已经有的话，就比较一下存的和现在一不一样
+
+     如果没有的话，就看下现在的word有没有在value里
+     * @param pattern
+     * @param str
+     * @return
+     */
+    public boolean wordPattern2(String pattern, String str) {
+        if(pattern == null || str == null) {
+            return false;
+        }
+        String[] words = str.split(" ");
+        if(words.length != pattern.length()) {
+            return false;
+        }
+        Map<Character, String> map = new HashMap<>();
+        for (int i = 0; i < pattern.length(); i++) {
+            char c = pattern.charAt(i);
+            if (map.containsKey(c)) {
+                if (!map.get(c).equals(words[i])) {
+                    return false;
+                }
+            } else {
+                if (map.containsValue(words[i])) {
+                    return false;
+                }
+                map.put(c, words[i]);
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         WordPattern wordPattern = new WordPattern();
-        System.out.println(wordPattern.wordPattern("aaaa","dog dog cat dog"));
+        System.out.println(wordPattern.wordPattern2("aaaa","dog dog dog dog"));
     }
 }
