@@ -1,6 +1,8 @@
 package pers.caijx.leetcode;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  Given an array of integers, find if the array contains any duplicates.
@@ -78,6 +80,35 @@ public class ContainsDuplicate {
             if (nums[i] == nums[i + 1]) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    /**
+     Intuition
+
+     Utilize a dynamic data structure that supports fast search and insert operations.
+
+     Algorithm
+
+     From Approach #1 we know that search operations is O(n)O(n) in an unsorted array and we did so repeatedly.
+     Utilizing a data structure with faster search time will speed up the entire algorithm.
+
+     There are many data structures commonly used as dynamic sets such as Binary Search Tree and Hash Table.
+     The operations we need to support here are search() and insert().
+     For a self-balancing Binary Search Tree (TreeSet or TreeMap in Java), search() and insert() are both O(\log n)O(logn) time.
+     For a Hash Table (HashSet or HashMap in Java), search() and insert() are both O(1)O(1) on average. Therefore,
+     by using hash table, we can achieve linear time complexity for finding the duplicate in an unsorted array.
+     * @param nums
+     * @return
+     */
+    public boolean containsDuplicate3(int[] nums) {
+        Set<Integer> set = new HashSet<>(nums.length);
+        for (int x : nums) {
+            if (set.contains(x)) {
+                return true;
+            }
+            set.add(x);
         }
         return false;
     }
