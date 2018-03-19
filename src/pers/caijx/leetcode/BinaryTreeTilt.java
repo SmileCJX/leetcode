@@ -23,7 +23,6 @@ package pers.caijx.leetcode;
 public class BinaryTreeTilt {
 
     int result = 0;
-
     public int findTilt(TreeNode root) {
         postOrder(root);
         return result;
