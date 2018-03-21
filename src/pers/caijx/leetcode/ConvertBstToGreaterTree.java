@@ -21,6 +21,14 @@ public class ConvertBstToGreaterTree {
 
     int sum = 0;
 
+    /**
+     Idea: Reversely traverse the tree and keep a sum of all previously visited values.
+     Because its a BST, values seen before are all greater than current node.val.
+     That’s what we want according to the problem.
+     将中序遍历左根右的顺序逆过来，变成右根左的顺序，这样就可以反向计算累加和sum，同时更新结点值
+     * @param root
+     * @return
+     */
     public TreeNode convertBST(TreeNode root) {
         if (root == null) {
             return null;
