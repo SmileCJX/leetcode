@@ -38,4 +38,9 @@ public class FindTheDifference {
         }
         return c;
     }
+
+    public static void main(String[] args) {
+        FindTheDifference instance = new FindTheDifference();
+        System.out.println(instance.findTheDifference("abcd","abcde"));
+    }
 }
