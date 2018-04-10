@@ -34,6 +34,8 @@ public class ConvertANumberToHexadecimal {
      binary verion of the input, and maps that to a hex char
      shift the input to the right by 4 bits, do it again
      until input becomes 0.
+     按位与来获取。既然是得到十六进制，那么每次与上0xF（二进制就是1111），得到一个值，然后数字向右移动4位，
+     这里需要注意的是数字是有符号的，刚好可以利用Java提供的无符号移动>>>
      * @param num
      * @return
      */
