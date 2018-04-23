@@ -17,6 +17,15 @@ package pers.caijx.leetcode;
  */
 public class ShortestUnsortedContinuousSubarray {
 
+    /**
+     从左向右扫描数组，一直更新max，找到最后（数组右侧）一个小于max的数，其下标记为end；
+
+     从右向左扫描数组，一直更新min，找到最后（数组左侧）一个大于min的数，其下标记为start；
+
+     返回end－start＋1.
+     * @param nums
+     * @return
+     */
     public int findUnsortedSubarray(int[] nums) {
         int n = nums.length;
         int beg = -1;
