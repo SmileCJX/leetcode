@@ -10,19 +10,20 @@ import sun.reflect.generics.tree.Tree;
  Example 1:
  Input:
  Tree 1                     Tree 2
- 1                         2
- / \                       / \
- 3   2                     1   3
- /                           \   \
- 5                             4   7
+       1                          2
+     / \                        / \
+    3   2                      1   3
+  /                            \   \
+ 5                              4   7
  Output:
  Merged tree:
- 3
- / \
- 4   5
- / \   \
- 5   4   7
+       3
+     / \
+    4   5
+   / \   \
+  5   4   7
  Note: The merging process must start from the root nodes of both trees.
+ 规则是，都存在的结点，就将结点值加起来，否则空的位置就由另一个树的结点来代替。
  * Created by Administrator on 2018/4/24/024.
  */
 public class MergeTwoBinaryTrees {
