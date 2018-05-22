@@ -44,7 +44,7 @@ public class NumberOfLinesToWriteString {
             index = c - 'a';
             lastLength += widths[index];
             if (lastLength > 100) {
-                lines ++;
+                lines++;
                 lastLength = widths[index];
             }
         }
