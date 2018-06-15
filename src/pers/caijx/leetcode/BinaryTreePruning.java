@@ -56,4 +56,13 @@ public class BinaryTreePruning {
         }
         return root;
     }
+
+    public static void main(String[] args) {
+        BinaryTreePruning instance = new BinaryTreePruning();
+        TreeNode treeNode = new TreeNode(1);
+        treeNode.right = new TreeNode(0);
+        treeNode.right.left = new TreeNode(0);
+        treeNode.right.right = new TreeNode(1);
+        instance.pruneTree(treeNode);
+    }
 }
