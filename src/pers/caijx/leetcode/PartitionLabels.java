@@ -43,4 +43,9 @@ public class PartitionLabels {
         }
         return list;
     }
+
+    public static void main(String[] args) {
+        PartitionLabels instance = new PartitionLabels();
+        System.out.println(instance.partitionLabels("ababcbacadefegdehijhklij"));
+    }
 }
