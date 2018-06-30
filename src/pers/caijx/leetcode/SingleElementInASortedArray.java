@@ -17,6 +17,11 @@ package pers.caijx.leetcode;
  */
 public class SingleElementInASortedArray {
 
+    /**
+     * 二分查找
+     * @param nums
+     * @return
+     */
     public int singleNonDuplicate(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
