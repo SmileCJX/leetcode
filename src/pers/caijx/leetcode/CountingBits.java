@@ -62,6 +62,6 @@ public class CountingBits {
     }
 
     public static void main(String[] args) {
-
+        new CountingBits().countBits(5);
     }
 }
