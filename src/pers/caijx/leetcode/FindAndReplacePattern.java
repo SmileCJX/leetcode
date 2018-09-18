@@ -1,6 +1,7 @@
 package pers.caijx.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -49,6 +50,23 @@ public class FindAndReplacePattern {
     }
 
     private boolean verifyPattern(String word, String pattern) {
-        return false;
+        if (word == null || pattern == null || word.length() != pattern.length()) {
+            return false;
+        }
+        HashMap<Character,Character> matchedPatternMap = new HashMap<>();
+        for (int i = 0; i < word.length(); i++) {
+            char w = word.charAt(i);
+            char p = pattern.charAt(i);
+            if (matchedPatternMap.containsKey(w)) {
+                if (p != matchedPatternMap.get(w)) {
+                    return false;
+                }
+            } else if (matchedPatternMap.containsValue(p)) {
+                return false;
+            } else {
+                matchedPatternMap.put(w,p);
+            }
+        }
+        return true;
     }
 }
