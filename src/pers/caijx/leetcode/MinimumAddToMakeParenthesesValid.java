@@ -34,4 +34,9 @@ public class MinimumAddToMakeParenthesesValid {
         }
         return count + stack.size();
     }
+
+    public static void main(String[] args) {
+        MinimumAddToMakeParenthesesValid instance = new MinimumAddToMakeParenthesesValid();
+        System.out.println(instance.minAddToMakeValid("()))(("));
+    }
 }
